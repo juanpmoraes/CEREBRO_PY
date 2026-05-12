@@ -32,7 +32,7 @@ O **Cérebro Digital** é um sistema de gerenciamento de conhecimento agnóstico
 
 ### 1. Clonar o repositório
 ```bash
-git clone https://github.com/seu-usuario/cerebro-digital.git
+git clone https://github.com/juanpmoraes/CEREBRO_PY.git
 cd cerebro-digital
 ```
 
