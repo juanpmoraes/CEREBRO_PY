@@ -13,8 +13,10 @@ load_dotenv()
 app = FastAPI(
     title="Cérebro Digital API",
     description="Sistema de Banco de Dados de Grafo Agnóstico a Dados",
-    version="1.0.0"
+    version="1.0.0",
+    redirect_slashes=False  # Desativa o redirecionamento automático que causa o erro 307
 )
+
 
 from .ws_manager import manager
 
