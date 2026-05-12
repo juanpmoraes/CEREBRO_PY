@@ -3,12 +3,12 @@ const API_URL = window.location.origin;
 
 const api = {
     async getGraph() {
-        const response = await fetch(`${API_URL}/graph`);
+        const response = await fetch(`${API_URL}/graph/`);
         return response.json();
     },
 
     async createNode(formData) {
-        const response = await fetch(`${API_URL}/nodes`, {
+        const response = await fetch(`${API_URL}/nodes/`, {
             method: 'POST',
             body: formData
         });
@@ -26,7 +26,7 @@ const api = {
     },
 
     async createEdge(sourceId, targetId, relationship = 'related_to') {
-        const response = await fetch(`${API_URL}/edges`, {
+        const response = await fetch(`${API_URL}/edges/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ source_id: sourceId, target_id: targetId, relationship })
