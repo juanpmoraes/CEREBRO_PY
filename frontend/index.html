@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cérebro Digital — Grafo de Conhecimento</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/force-graph"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div id="app">
+        <header>
+            <div class="logo">CÉREBRO <span>DIGITAL</span></div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar no cérebro...">
+            </div>
+            <div class="actions">
+                <button id="btn-upload" class="btn-primary">+ Adicionar</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="graph-container"></div>
+            
+            <!-- Painel Lateral -->
+            <aside id="details-panel" class="hidden">
+                <div class="panel-header">
+                    <h2 id="node-title">Detalhes do Nó</h2>
+                    <button id="close-panel">&times;</button>
+                </div>
+                <div class="panel-content">
+                    <div class="info-group">
+                        <label>Tipo:</label>
+                        <span id="node-type">-</span>
+                    </div>
+                    <div class="info-group">
+                        <label>MIME:</label>
+                        <span id="node-mime">-</span>
+                    </div>
+                    <div class="info-group">
+                        <label>Resumo:</label>
+                        <p id="node-summary"></p>
+                    </div>
+                    <div id="node-preview"></div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Modal de Upload -->
+        <div id="upload-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Novo Nó</h3>
+                <form id="upload-form">
+                    <input type="text" id="node-name" placeholder="Nome do Nó" required>
+                    <select id="node-type-select">
+                        <option value="file">Arquivo</option>
+                        <option value="concept">Conceito/Valor</option>
+                    </select>
+                    <input type="file" id="file-input">
+                    <textarea id="raw-value" placeholder="Valor ou texto (opcional)"></textarea>
+                    <input type="text" id="node-tags" placeholder="Tags (separadas por vírgula)">
+                    <div class="modal-actions">
+                        <button type="button" id="cancel-upload">Cancelar</button>
+                        <button type="submit" class="btn-primary">Criar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/graph.js"></script>
+</body>
+</html>
