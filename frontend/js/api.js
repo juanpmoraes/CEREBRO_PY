@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:8000';
+const API_URL = window.location.origin;
+
 
 const api = {
     async getGraph() {
